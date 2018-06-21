@@ -47,15 +47,13 @@ window.addEventListener("devicemotion", getAccelGyro, false);
 window.addEventListener("deviceorientation", getMagnet, false);
 
 function getAccelGyro(event) {
-  var x = event.accelerationIncludingGravit.x;
-  var y = event.accelerationIncludingGravit.y;
-  var z = event.accelerationIncludingGravit.z;
+  var x = event.accelerationIncludingGravity.x;
+  var y = event.accelerationIncludingGravity.y;
+  var z = event.accelerationIncludingGravity.z;
 
   var alpha = event.rotationRate.alpha;   // z-axis
   var beta = event.rotationRate.beta;     // x-axis
   var gamma = event.rotationRate.gamma;   // y-axis
-
-  alert("Hello");
 
   document.getElementById("ax").innerHTML = x;
   document.getElementById("ay").innerHTML = y;
