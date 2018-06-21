@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Motion Sensor</title>
+  </head>
+  <body>
+    <h1>Motion Sensor</h1>
+    <div>
+      <h2>Accelerometor[m/s^2]</h2>
+      <p>
+        ax:<span id="ax"></span>
+      </p>
+      <p>
+        ay:<span id="ay"></span>
+      </p>
+      <p>
+        az:<span id="az"></span>
+      </p>
+    </div>
+    <div>
+      <h2>Gyroscope[rad/s]</h2>
+      <p>
+        gx:<span id="gx"></span>
+      </p>
+      <p>
+        gy:<span id="gy"></span>
+      </p>
+      <p>
+        gz:<span id="gz"></span>
+      </p>
+    </div>
+    <div>
+      <h2>Magnetic Field[uT]</h2>
+      <p>
+        gx:<span id="mx"></span>
+      </p>
+      <p>
+        gy:<span id="my"></span>
+      </p>
+      <p>
+        gz:<span id="mz"></span>
+      </p>
+    </div>
+<script>
+window.addEventListener("devicemotion", getAccelGyro, false);
+window.addEventListener("deviceorientation", getMagnet, false);
+
+function getAccelGyro(event) {
+  var x = event.accelerationIncludingGravit.x;
+  var y = event.accelerationIncludingGravit.y;
+  var z = event.accelerationIncludingGravit.z;
+
+  var str = "ax = " + x + "\n";
+  alert(str);
+
+  document.getElementById(ax).innerHTML = x;
+  document.getElementById(ay).innerHTML = y;
+  document.getElementById(az).innerHTML = z;
+
+  var alpha = event.rotationRate.alpha;   // z-axis
+  var beta = event.rotationRate.beta;     // x-axis
+  var gamma = event.rotationRate.gamma;   // y-axis
+
+  var str = "gx = " + beta + "\n";
+  alert(str);
+
+  document.getElementById(gx).innerHTML = beta;
+  document.getElementById(gy).innerHTML = gamma;
+  document.getElementById(gz).innerHTML = alpha;
+}
+
+
+function getMagnet(event) {
+  var alpha = event.alpha;   // z-axis
+  var beta = event.beta;     // x-axis
+  var gamma = event.gamma;   // y-axis
+
+  var str = "mx = " + beta + "\n";
+  alert(str);
+
+  document.getElementById(mx).innerHTML = beta;
+  document.getElementById(my).innerHTML = gamma;
+  document.getElementById(mz).innerHTML = alpha;
+}
+
+</script>
+  </body>
+</html>
