@@ -51,19 +51,20 @@ function getAccelGyro(event) {
   var y = event.accelerationIncludingGravit.y;
   var z = event.accelerationIncludingGravit.z;
 
-  alert("Hello");
-
-  document.getElementById(ax).innerHTML = String(x);
-  document.getElementById(ay).innerHTML = String(y);
-  document.getElementById(az).innerHTML = String(z);
+  document.getElementById(ax).innerHTML = x;
+  document.getElementById(ay).innerHTML = y;
+  document.getElementById(az).innerHTML = z;
 
   var alpha = event.rotationRate.alpha;   // z-axis
   var beta = event.rotationRate.beta;     // x-axis
   var gamma = event.rotationRate.gamma;   // y-axis
 
-  document.getElementById(gx).innerHTML = String(beta);
-  document.getElementById(gy).innerHTML = String(gamma);
-  document.getElementById(gz).innerHTML = String(alpha);
+  var str = "gx = " + beta + "\n";
+  alert(str);
+
+  document.getElementById(gx).innerHTML = beta;
+  document.getElementById(gy).innerHTML = gamma;
+  document.getElementById(gz).innerHTML = alpha;
 }
 
 
@@ -71,6 +72,9 @@ function getMagnet(event) {
   var alpha = event.alpha;   // z-axis
   var beta = event.beta;     // x-axis
   var gamma = event.gamma;   // y-axis
+
+  var str = "mx = " + beta + "\n";
+  alert(str);
 
   document.getElementById(mx).innerHTML = beta;
   document.getElementById(my).innerHTML = gamma;
