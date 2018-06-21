@@ -51,6 +51,8 @@ function getAccelGyro(event) {
   var y = event.accelerationIncludingGravit.y;
   var z = event.accelerationIncludingGravit.z;
 
+  alert(x);
+
   document.getElementById(ax).innerHTML = String(x);
   document.getElementById(ay).innerHTML = String(y);
   document.getElementById(az).innerHTML = String(z);
