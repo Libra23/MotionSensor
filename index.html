@@ -51,17 +51,17 @@ function getAccelGyro(event) {
   var y = event.accelerationIncludingGravit.y;
   var z = event.accelerationIncludingGravit.z;
 
-  document.getElementById(ax).innerHTML = x;
-  document.getElementById(ay).innerHTML = y;
-  document.getElementById(az).innerHTML = z;
+  document.getElementById(ax).innerHTML = String(x);
+  document.getElementById(ay).innerHTML = String(y);
+  document.getElementById(az).innerHTML = String(z);
 
   var alpha = event.rotationRate.alpha;   // z-axis
   var beta = event.rotationRate.beta;     // x-axis
   var gamma = event.rotationRate.gamma;   // y-axis
 
-  document.getElementById(gx).innerHTML = beta;
-  document.getElementById(gy).innerHTML = gamma;
-  document.getElementById(gz).innerHTML = alpha;
+  document.getElementById(gx).innerHTML = String(beta);
+  document.getElementById(gy).innerHTML = String(gamma);
+  document.getElementById(gz).innerHTML = String(alpha);
 }
 
 
